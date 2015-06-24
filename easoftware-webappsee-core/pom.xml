@@ -52,6 +52,10 @@
             <groupId>org.hibernate</groupId> 
             <artifactId>hibernate-entitymanager</artifactId> 
             <scope>compile</scope> 
-        </dependency> <!-- Driver JDBC do MySQL --> 
+        </dependency> 
+         <dependency> 
+                <groupId>mysql</groupId> 
+                <artifactId>mysql-connector-java</artifactId> 
+            </dependency> <!-- Driver JDBC do MySQL --> 
     </dependencies>
 </project>
