@@ -6,13 +6,9 @@
 package com.easoftware.webappsee.core.dao;
 
 import com.easoftware.webappsee.core.dao.exceptions.NonexistentEntityException;
-import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Root;
 import com.easoftware.webappsee.core.entity.Ramo;
 import com.easoftware.webappsee.core.entity.Tarefa;
-import java.util.List;
 import javax.persistence.EntityManager;
 
 /**
