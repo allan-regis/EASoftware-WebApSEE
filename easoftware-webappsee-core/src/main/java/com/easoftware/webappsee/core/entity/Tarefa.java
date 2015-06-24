@@ -103,4 +103,46 @@ public class Tarefa implements Serializable
     public Ramo getRamo() {
         return ramo;
     }
+
+    /**
+     * @param dataInicial the dataInicial to set
+     */
+    public void setDataInicial(Calendar dataInicial) {
+        this.dataInicial = dataInicial;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    /**
+     * @param situacao the situacao to set
+     */
+    public void setSituacao(Situacao situacao) {
+        this.situacao = situacao;
+    }
+
+    /**
+     * @param descricao the descricao to set
+     */
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    /**
+     * @param nome the nome to set
+     */
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    /**
+     * @param ramo the ramo to set
+     */
+    public void setRamo(Ramo ramo) {
+        this.ramo = ramo;
+    }
 }

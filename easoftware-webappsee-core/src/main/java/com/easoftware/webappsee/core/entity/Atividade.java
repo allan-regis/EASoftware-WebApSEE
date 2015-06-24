@@ -208,4 +208,11 @@ public class Atividade implements Serializable
    {
       this.tarefas = tarefas;
    }
+
+    /**
+     * @param projeto the projeto to set
+     */
+    public void setProjeto(Projeto projeto) {
+        this.projeto = projeto;
+    }
 }
