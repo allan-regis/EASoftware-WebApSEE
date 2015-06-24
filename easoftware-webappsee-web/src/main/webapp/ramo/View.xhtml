@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewRamoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewRamoLabel_ambiente}"/>
+                    <h:outputText value="#{ramoController.selected.ambiente}" title="#{bundle.ViewRamoTitle_ambiente}"/>
+                    <h:outputText value="#{bundle.ViewRamoLabel_disciplina}"/>
+                    <h:outputText value="#{ramoController.selected.disciplina}" title="#{bundle.ViewRamoTitle_disciplina}"/>
+                    <h:outputText value="#{bundle.ViewRamoLabel_id}"/>
+                    <h:outputText value="#{ramoController.selected.id}" title="#{bundle.ViewRamoTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewRamoLabel_responsavel}"/>
+                    <h:outputText value="#{ramoController.selected.responsavel}" title="#{bundle.ViewRamoTitle_responsavel}"/>
+                    <h:outputText value="#{bundle.ViewRamoLabel_situacao}"/>
+                    <h:outputText value="#{ramoController.selected.situacao}" title="#{bundle.ViewRamoTitle_situacao}"/>
+                    <h:outputText value="#{bundle.ViewRamoLabel_url}"/>
+                    <h:outputText value="#{ramoController.selected.url}" title="#{bundle.ViewRamoTitle_url}"/>
+                    <h:outputText value="#{bundle.ViewRamoLabel_versaoDestino}"/>
+                    <h:outputText value="#{ramoController.selected.versaoDestino}" title="#{bundle.ViewRamoTitle_versaoDestino}"/>
+                    <h:outputText value="#{bundle.ViewRamoLabel_versaoOrigem}"/>
+                    <h:outputText value="#{ramoController.selected.versaoOrigem}" title="#{bundle.ViewRamoTitle_versaoOrigem}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{ramoController.destroyAndView}" value="#{bundle.ViewRamoDestroyLink}"/>
+                <br />
+                <br />
+                <h:commandLink action="Edit" value="#{bundle.ViewRamoEditLink}"/>
+                <br />
+                <h:commandLink action="#{ramoController.prepareCreate}" value="#{bundle.ViewRamoCreateLink}" />
+                <br />
+                <h:commandLink action="#{ramoController.prepareList}" value="#{bundle.ViewRamoShowAllLink}"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.ViewRamoIndexLink}" action="/index" immediate="true" />
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

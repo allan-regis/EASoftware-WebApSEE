@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditAtividadeTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditAtividadeLabel_antecessora}" for="antecessora" />
+                    <h:selectOneMenu id="antecessora" value="#{atividadeController.selected.antecessora}" title="#{bundle.EditAtividadeTitle_antecessora}" >
+                        <f:selectItems value="#{atividadeController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditAtividadeLabel_descricao}" for="descricao" />
+                    <h:inputText id="descricao" value="#{atividadeController.selected.descricao}" title="#{bundle.EditAtividadeTitle_descricao}" />
+                    <h:outputLabel value="#{bundle.EditAtividadeLabel_disciplina}" for="disciplina" />
+                    <h:inputText id="disciplina" value="#{atividadeController.selected.disciplina}" title="#{bundle.EditAtividadeTitle_disciplina}" />
+                    <h:outputLabel value="#{bundle.EditAtividadeLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{atividadeController.selected.id}" title="#{bundle.EditAtividadeTitle_id}" />
+                    <h:outputLabel value="#{bundle.EditAtividadeLabel_nome}" for="nome" />
+                    <h:inputText id="nome" value="#{atividadeController.selected.nome}" title="#{bundle.EditAtividadeTitle_nome}" />
+                    <h:outputLabel value="#{bundle.EditAtividadeLabel_projeto}" for="projeto" />
+                    <h:selectOneMenu id="projeto" value="#{atividadeController.selected.projeto}" title="#{bundle.EditAtividadeTitle_projeto}" >
+                        <f:selectItems value="#{projetoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditAtividadeLabel_situacao}" for="situacao" />
+                    <h:inputText id="situacao" value="#{atividadeController.selected.situacao}" title="#{bundle.EditAtividadeTitle_situacao}" />
+                    <h:outputLabel value="#{bundle.EditAtividadeLabel_sucessora}" for="sucessora" />
+                    <h:selectOneMenu id="sucessora" value="#{atividadeController.selected.sucessora}" title="#{bundle.EditAtividadeTitle_sucessora}" >
+                        <f:selectItems value="#{atividadeController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{atividadeController.update}" value="#{bundle.EditAtividadeSaveLink}"/>
+                <br />
+                <br />
+                <h:commandLink action="View" value="#{bundle.EditAtividadeViewLink}" immediate="true"/>
+                <br />
+                <h:commandLink action="#{atividadeController.prepareList}" value="#{bundle.EditAtividadeShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.EditAtividadeIndexLink}" action="/index" immediate="true" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+<h:outputStylesheet name="css/jsfcrud.css"/>
+    </h:head>
+    <h:body>
+        <h:form><p:commandButton value="Hello from PrimeFaces" onclick="dlg1.show();" type="button" /><p:dialog header="PrimeFaces Dialog" widgetVar="dlg1" width="500">For more information visit <a href="http://primefaces.org">http://primefaces.org</a>.</p:dialog></h:form>
+                    <h:form>
+                    <h:commandLink action="/agente/List" value="Show All Agente Items"/>
+                </h:form>
+                <h:form>
+                    <h:commandLink action="/atividade/List" value="Show All Atividade Items"/>
+                </h:form>
+                <h:form>
+                    <h:commandLink action="/projeto/List" value="Show All Projeto Items"/>
+                </h:form>
+                <h:form>
+                    <h:commandLink action="/ramo/List" value="Show All Ramo Items"/>
+                </h:form>
+                <h:form>
+                    <h:commandLink action="/tarefa/List" value="Show All Tarefa Items"/>
+                </h:form>
+</h:body>
+
+
+
+
+
+</html>
+

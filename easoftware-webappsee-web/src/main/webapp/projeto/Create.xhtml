@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateProjetoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateProjetoLabel_cliente}" for="cliente" />
+                    <h:inputText id="cliente" value="#{projetoController.selected.cliente}" title="#{bundle.CreateProjetoTitle_cliente}" />
+                    <h:outputLabel value="#{bundle.CreateProjetoLabel_dataFinal}" for="dataFinal" />
+                    <h:inputText id="dataFinal" value="#{projetoController.selected.dataFinal}" title="#{bundle.CreateProjetoTitle_dataFinal}" />
+                    <h:outputLabel value="#{bundle.CreateProjetoLabel_dataInicial}" for="dataInicial" />
+                    <h:inputText id="dataInicial" value="#{projetoController.selected.dataInicial}" title="#{bundle.CreateProjetoTitle_dataInicial}" />
+                    <h:outputLabel value="#{bundle.CreateProjetoLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{projetoController.selected.id}" title="#{bundle.CreateProjetoTitle_id}" />
+                    <h:outputLabel value="#{bundle.CreateProjetoLabel_nome}" for="nome" />
+                    <h:inputText id="nome" value="#{projetoController.selected.nome}" title="#{bundle.CreateProjetoTitle_nome}" />
+                    <h:outputLabel value="#{bundle.CreateProjetoLabel_versao}" for="versao" />
+                    <h:inputText id="versao" value="#{projetoController.selected.versao}" title="#{bundle.CreateProjetoTitle_versao}" />
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{projetoController.create}" value="#{bundle.CreateProjetoSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{projetoController.prepareList}" value="#{bundle.CreateProjetoShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.CreateProjetoIndexLink}" action="/index" immediate="true" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateTarefaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateTarefaLabel_dataFinal}" for="dataFinal" />
+                    <h:inputText id="dataFinal" value="#{tarefaController.selected.dataFinal}" title="#{bundle.CreateTarefaTitle_dataFinal}" />
+                    <h:outputLabel value="#{bundle.CreateTarefaLabel_dataInicial}" for="dataInicial" />
+                    <h:inputText id="dataInicial" value="#{tarefaController.selected.dataInicial}" title="#{bundle.CreateTarefaTitle_dataInicial}" />
+                    <h:outputLabel value="#{bundle.CreateTarefaLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{tarefaController.selected.id}" title="#{bundle.CreateTarefaTitle_id}" />
+                    <h:outputLabel value="#{bundle.CreateTarefaLabel_situacao}" for="situacao" />
+                    <h:inputText id="situacao" value="#{tarefaController.selected.situacao}" title="#{bundle.CreateTarefaTitle_situacao}" />
+                    <h:outputLabel value="#{bundle.CreateTarefaLabel_descricao}" for="descricao" />
+                    <h:inputText id="descricao" value="#{tarefaController.selected.descricao}" title="#{bundle.CreateTarefaTitle_descricao}" />
+                    <h:outputLabel value="#{bundle.CreateTarefaLabel_nome}" for="nome" />
+                    <h:inputText id="nome" value="#{tarefaController.selected.nome}" title="#{bundle.CreateTarefaTitle_nome}" />
+                    <h:outputLabel value="#{bundle.CreateTarefaLabel_ramo}" for="ramo" />
+                    <h:selectOneMenu id="ramo" value="#{tarefaController.selected.ramo}" title="#{bundle.CreateTarefaTitle_ramo}" >
+                        <f:selectItems value="#{ramoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{tarefaController.create}" value="#{bundle.CreateTarefaSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{tarefaController.prepareList}" value="#{bundle.CreateTarefaShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.CreateTarefaIndexLink}" action="/index" immediate="true" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

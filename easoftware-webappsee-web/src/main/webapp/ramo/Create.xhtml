@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateRamoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateRamoLabel_ambiente}" for="ambiente" />
+                    <h:inputText id="ambiente" value="#{ramoController.selected.ambiente}" title="#{bundle.CreateRamoTitle_ambiente}" />
+                    <h:outputLabel value="#{bundle.CreateRamoLabel_disciplina}" for="disciplina" />
+                    <h:inputText id="disciplina" value="#{ramoController.selected.disciplina}" title="#{bundle.CreateRamoTitle_disciplina}" />
+                    <h:outputLabel value="#{bundle.CreateRamoLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{ramoController.selected.id}" title="#{bundle.CreateRamoTitle_id}" />
+                    <h:outputLabel value="#{bundle.CreateRamoLabel_responsavel}" for="responsavel" />
+                    <h:selectOneMenu id="responsavel" value="#{ramoController.selected.responsavel}" title="#{bundle.CreateRamoTitle_responsavel}" >
+                        <f:selectItems value="#{agenteController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateRamoLabel_situacao}" for="situacao" />
+                    <h:inputText id="situacao" value="#{ramoController.selected.situacao}" title="#{bundle.CreateRamoTitle_situacao}" />
+                    <h:outputLabel value="#{bundle.CreateRamoLabel_url}" for="url" />
+                    <h:inputText id="url" value="#{ramoController.selected.url}" title="#{bundle.CreateRamoTitle_url}" />
+                    <h:outputLabel value="#{bundle.CreateRamoLabel_versaoDestino}" for="versaoDestino" />
+                    <h:inputText id="versaoDestino" value="#{ramoController.selected.versaoDestino}" title="#{bundle.CreateRamoTitle_versaoDestino}" />
+                    <h:outputLabel value="#{bundle.CreateRamoLabel_versaoOrigem}" for="versaoOrigem" />
+                    <h:inputText id="versaoOrigem" value="#{ramoController.selected.versaoOrigem}" title="#{bundle.CreateRamoTitle_versaoOrigem}" />
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{ramoController.create}" value="#{bundle.CreateRamoSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{ramoController.prepareList}" value="#{bundle.CreateRamoShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.CreateRamoIndexLink}" action="/index" immediate="true" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
