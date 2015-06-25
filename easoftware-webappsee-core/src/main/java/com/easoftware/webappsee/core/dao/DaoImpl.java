@@ -25,7 +25,7 @@ public class DaoImpl implements Serializable, Dao {
     private final static EntityManagerFactory factory;
 
     static {
-        factory = Persistence.createEntityManagerFactory("WEBAPSEE_PU");
+        factory = Persistence.createEntityManagerFactory("webapsee");
     }
 
     public static EntityManager getEntityManager() {

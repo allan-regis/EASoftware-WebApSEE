@@ -15,7 +15,7 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 public class AgenteFacade extends AbstractFacade<Agente> {
-    @PersistenceContext(unitName = "WEBAPSEE_PU")
+    @PersistenceContext(unitName = "WEBAPSEE")
     private EntityManager em;
 
     protected EntityManager getEntityManager() {

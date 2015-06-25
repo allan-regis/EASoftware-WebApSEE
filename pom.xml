@@ -36,7 +36,7 @@
         <module>easoftware-webappsee-core</module>
         <module>easoftware-webappsee-ejb</module>
         <module>easoftware-webappsee-web</module>
-  </modules>
+    </modules>
 
     <dependencyManagement>
         <dependencies>
@@ -101,16 +101,24 @@
                 <artifactId>log4j</artifactId>
                 <version>1.2.17</version>
             </dependency>
+            <dependency>
+                <groupId>org.hibernate.javax.persistence</groupId>
+                <artifactId>hibernate-jpa-2.1-api</artifactId>
+                <version>1.0.0.Final</version>
+            </dependency>
+            <!-- Núcleo do Hibernate --> 
             <dependency> 
                 <groupId>org.hibernate</groupId> 
                 <artifactId>hibernate-core</artifactId> 
-                <version>4.3.9.Final</version> 
-            </dependency> <!-- Implementa��o de EntityManager da JPA --> 
+                <version>4.3.8.Final</version> 
+                <scope>compile</scope> 
+            </dependency> <!-- Implementação de EntityManager da JPA --> 
             <dependency> 
                 <groupId>org.hibernate</groupId> 
                 <artifactId>hibernate-entitymanager</artifactId> 
                 <version>4.3.8.Final</version> 
-            </dependency> <!-- Driver JDBC do MySQL --> 
+                <scope>compile</scope> 
+            </dependency>
             <dependency> 
                 <groupId>mysql</groupId> 
                 <artifactId>mysql-connector-java</artifactId> 
@@ -132,7 +140,6 @@
             <url>https://maven.java.net/content/repositories/snapshots/</url>
         </repository>
     </repositories>
-    
     
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
